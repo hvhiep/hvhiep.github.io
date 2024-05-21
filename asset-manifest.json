@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/hvhiep.github.io/static/css/main.7eb2dd0a.css",
+    "main.js": "/hvhiep.github.io/static/js/main.af739fd6.js",
+    "static/js/453.acca0757.chunk.js": "/hvhiep.github.io/static/js/453.acca0757.chunk.js",
+    "index.html": "/hvhiep.github.io/index.html",
+    "main.7eb2dd0a.css.map": "/hvhiep.github.io/static/css/main.7eb2dd0a.css.map",
+    "main.af739fd6.js.map": "/hvhiep.github.io/static/js/main.af739fd6.js.map",
+    "453.acca0757.chunk.js.map": "/hvhiep.github.io/static/js/453.acca0757.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7eb2dd0a.css",
+    "static/js/main.af739fd6.js"
+  ]
+}
