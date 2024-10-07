@@ -1,20 +1,20 @@
 import React, {useCallback} from 'react';
 import clsx from 'clsx';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faLinkedin, faYoutube, faGithub} from '@fortawesome/free-brands-svg-icons';
+import {faAppStore, faGithub, faGooglePlay, faLinkedin} from '@fortawesome/free-brands-svg-icons';
 import {
-	faMouse,
 	faArrowDown,
-	faPaperPlane,
 	faCertificate,
-	faUserGroup,
-	faGears,
-	faStar,
-	faVideo,
 	faDownload,
-	faPhone,
 	faEnvelope,
-	faLocationDot
+	faGears,
+	faLocationDot,
+	faMouse,
+	faPaperPlane,
+	faPhone,
+	faStar,
+	faUserGroup,
+	faVideo
 } from '@fortawesome/free-solid-svg-icons';
 import styles from './Content.module.scss';
 
@@ -22,11 +22,7 @@ function Content() {
 	const bannerBtns = [
 		{
 			icon: faLinkedin,
-			link: 'https://github.com/hvhiep'
-		},
-		{
-			icon: faYoutube,
-			link: 'https://www.youtube.com/watch?v=Qy9q5eeDPuw'
+			link: 'https://www.linkedin.com/in/hvhiep'
 		},
 		{
 			icon: faGithub,
@@ -35,24 +31,24 @@ function Content() {
 	];
 	const skills = [
 		{
-			url: './assets/html.png',
-			title: 'HTML'
-		},
-		{
-			url: './assets/css.png',
-			title: 'CSS'
+			url: './assets/reactnative.png',
+			title: 'React Native'
 		},
 		{
 			url: './assets/javascript.png',
 			title: 'Javascript'
 		},
 		{
-			url: './assets/reactjs.png',
-			title: 'ReactJS'
+			url: './assets/reduxsaga.png',
+			title: 'Redux Saga'
 		},
 		{
-			url: './assets/reactnative.png',
-			title: 'React Native'
+			url: './assets/typescript.png',
+			title: 'Typescript'
+		},
+		{
+			url: './assets/reactjs.png',
+			title: 'ReactJS'
 		},
 		{
 			url: './assets/firebase.png',
@@ -61,14 +57,41 @@ function Content() {
 		{
 			url: './assets/github.png',
 			title: 'Github'
-		},
-		{
-			url: './assets/figma.png',
-			title: 'Figma'
 		}
 	];
 
 	const projects = [
+		{
+			timeline: '08/2022 - Present',
+			name: 'MetaFox',
+			desc: 'An online community-building tool for people to create their own social communities.',
+			images: [
+				'./assets/phone/gita1.png',
+				'./assets/phone/gita2.png',
+				'./assets/phone/gita3.png',
+				'./assets/phone/gita4.png'
+			],
+			technologies: 'React Native, TypeScript, Redux Saga, Firebase.',
+			featureTitle: 'Responsibilities',
+			features: [
+				'Maintained and developed new modules for the core application, such as Social Invitation, Dating, etc.',
+				'Added features with animations (reaction drop effects, drag- and-drop objects,...) using libraries like Reanimated, Skia, etc.',
+				'Wrote scripts to automate repetitive tasks during app builds (downloading source code of custom modules, checking and adding dependencies and special permissions)',
+				'Developed custom features based on client requirements, such as managing expenses and residents in buildings, creating courses, etc.'
+			],
+			buttons: [
+				{
+					title: 'Google Play',
+					icon: faGooglePlay,
+					link: 'https://play.google.com/store/apps/details?id=com.metafoxapp.mobile'
+				},
+				{
+					title: 'App Store',
+					icon: faAppStore,
+					link: 'https://apps.apple.com/vn/app/metafox/id1637558130?l=vi'
+				}
+			]
+		},
 		{
 			timeline: '18/04/2022 - 14/07/2022',
 			name: 'Gita',
@@ -158,22 +181,24 @@ function Content() {
 						<div className={styles.stickyContent}>
 							<h1>{item.name}</h1>
 							<h4>{item.desc}</h4>
-							<div className={styles.project__itemRightTextGroup}>
-								<FontAwesomeIcon
-									className={styles.project__itemTextIcon}
-									icon={faUserGroup}
-								/>
-								<span>
-									<span className={styles.bold}>Member:</span> {item.member}
-								</span>
-							</div>
+							{item?.member ? (
+								<div className={styles.project__itemRightTextGroup}>
+									<FontAwesomeIcon
+										className={styles.project__itemTextIcon}
+										icon={faUserGroup}
+									/>
+									<span>
+										<span className={styles.bold}>Member:</span> {item.member}
+									</span>
+								</div>
+							) : null}
 							<div className={styles.project__itemRightTextGroup}>
 								<FontAwesomeIcon
 									className={styles.project__itemTextIcon}
 									icon={faGears}
 								/>
 								<span>
-									<span className={styles.bold}>Technology:</span> {item.technologies}
+									<span className={styles.bold}>Technologies:</span> {item.technologies}
 								</span>
 							</div>
 							<ul>
@@ -181,7 +206,7 @@ function Content() {
 									className={styles.project__itemTextIcon}
 									icon={faStar}
 								/>
-								<span className={styles.bold}>Feature: </span>
+								<span className={styles.bold}>{`${item?.featureTitle}: ` || 'Feature: '}</span>
 								{item.features.map(feature => {
 									return (
 										<li key={feature}>
@@ -191,13 +216,23 @@ function Content() {
 								})}
 							</ul>
 							<div className={styles.project__itemBtnWrapper}>
-								<Button
-									title='Github'
-									icon={faGithub}
-									link={item.githubURL}
-								/>
-
-								{item.demoURL ? (
+								{item?.buttons?.length
+									? item.buttons.map(btn => (
+											<Button
+												title={btn.title}
+												icon={btn.icon}
+												link={btn.link}
+											/>
+										))
+									: null}
+								{item?.githubURL ? (
+									<Button
+										title='Github'
+										icon={faGithub}
+										link={item.githubURL}
+									/>
+								) : null}
+								{item?.demoURL ? (
 									<Button
 										title='Demo'
 										icon={faVideo}
@@ -240,9 +275,12 @@ function Content() {
 						{/* first introduction */}
 						<div className={styles.bannerTextWrapper}>
 							<div>
-								<h1>Hi, I'm Hiep</h1>
-								<h1>Frontend Developer</h1>
-								<span>Fresh level experience in web and mobile development</span>
+								<h1>Hi 👋, I'm Hiep</h1>
+								<h1>A Mobile Developer</h1>
+								<span>
+									<span className={styles.bold}>Two years</span> of experience in developing cross-platform mobile
+									applications using React Native
+								</span>
 								<div>
 									<Button
 										title='Contact Me'
@@ -252,7 +290,7 @@ function Content() {
 									<Button
 										title='Download CV'
 										icon={faDownload}
-										link='./assets/cv.pdf'
+										link='./assets/HoangVanHiepCV.pdf'
 										download
 									/>
 								</div>
@@ -310,7 +348,7 @@ function Content() {
 							<span>27/08/2018 - NOW</span>
 							<h3>UNIVERSITY OF INFORMATION TECHNOLOGY</h3>
 							<h4>Major: Information Technology</h4>
-							<span>GPA: 8.09/10</span>
+							<span>GPA: 8.1/10</span>
 							{/* awards */}
 							<div className={styles.education__awardWrapper}>
 								<div>

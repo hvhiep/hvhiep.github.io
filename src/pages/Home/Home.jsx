@@ -17,7 +17,6 @@ function Home() {
 
 	useEffect(() => {
 		window.addEventListener('scroll', scrollCheck);
-		console.log('re-render');
 
 		return () => window.removeEventListener('scroll', scrollCheck);
 	}, []);
