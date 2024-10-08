@@ -1,4 +1,4 @@
-import React, {useCallback} from 'react';
+import React, {useCallback, useEffect} from 'react';
 import clsx from 'clsx';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faAppStore, faGithub, faGooglePlay, faLinkedin} from '@fortawesome/free-brands-svg-icons';
@@ -66,11 +66,15 @@ function Content() {
 			name: 'MetaFox',
 			desc: 'An online community-building tool for people to create their own social communities.',
 			images: [
-				'./assets/phone/gita1.png',
-				'./assets/phone/gita2.png',
-				'./assets/phone/gita3.png',
-				'./assets/phone/gita4.png'
+				'./assets/phone/metafox1.png',
+				'./assets/phone/metafox2.png',
+				'./assets/phone/metafox3.png',
+				'./assets/phone/metafox4.png',
+				'./assets/phone/metafox5.png'
 			],
+			imageProps: {
+				borderRadius: true
+			},
 			technologies: 'React Native, TypeScript, Redux Saga, Firebase.',
 			featureTitle: 'Responsibilities',
 			features: [
@@ -171,6 +175,7 @@ function Content() {
 						{item.images.map(url => (
 							<img
 								key={url}
+								className={clsx(item?.imageProps?.borderRadius && styles.project__itemLeftBorderRadius)}
 								src={url}
 								alt='project img'
 							/>
@@ -206,7 +211,7 @@ function Content() {
 									className={styles.project__itemTextIcon}
 									icon={faStar}
 								/>
-								<span className={styles.bold}>{`${item?.featureTitle}: ` || 'Feature: '}</span>
+								<span className={styles.bold}>{item?.featureTitle ? `${item?.featureTitle}: ` : 'Features: '}</span>
 								{item.features.map(feature => {
 									return (
 										<li key={feature}>
@@ -218,11 +223,12 @@ function Content() {
 							<div className={styles.project__itemBtnWrapper}>
 								{item?.buttons?.length
 									? item.buttons.map(btn => (
-											<Button
-												title={btn.title}
-												icon={btn.icon}
-												link={btn.link}
-											/>
+										<Button
+											key={btn.link}
+											title={btn.title}
+											icon={btn.icon}
+											link={btn.link}
+										/>
 										))
 									: null}
 								{item?.githubURL ? (
@@ -245,6 +251,14 @@ function Content() {
 				</div>
 			</div>
 		);
+	}, []);
+
+	useEffect(() => {
+		document.addEventListener('sticky-change', e => {
+			const header = e.detail.target;  // header became sticky or stopped sticking.
+			const sticking = e.detail.stuck; // true when header is sticky.
+			header.classList.toggle('shadow', sticking); // add drop shadow when sticking.
+		});
 	}, []);
 
 	return (

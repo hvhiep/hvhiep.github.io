@@ -195,8 +195,11 @@
     align-items: center;
     width: 50%;
     img {
-        width: 250px;
+        width: 80%;
         margin-bottom: 10px;
+    }
+    .project__itemLeftBorderRadius {
+        border-radius: 50px;
     }
 }
 // thông tin của project
@@ -219,9 +222,9 @@
     }
     ul {
         margin-bottom: 10px;
-        list-style: circle;
-        list-style-position: outside;
+        list-style: circle outside;
         li {
+            list-style-type: circle;
             margin-top: 20px;
             margin-left: 30px;
         }
@@ -291,6 +294,11 @@
     }
     .project__item {
         width: 100%;
+        .project__itemLeftWrapper {
+            .project__itemLeftBorderRadius {
+                border-radius: 30px;
+            }
+        }
         .project__itemRightWrapper {
             width: 50%;
             h1 {
@@ -409,17 +417,25 @@
         width: 95%;
         padding: 0 8px;
         margin-bottom: 30px;
+        .project__itemTimeline {
+            margin-left: 10px;
+        }
+        .project__itemLeftWrapper {
+            .project__itemLeftBorderRadius {
+                border-radius: 30px;
+            }
+        }
         .project__itemRightWrapper {
             width: 50%;
             h1 {
                 margin-bottom: 10px;
             }
             .project__itemRightTextGroup {
-                font-size: var(--small-font-size);
+                font-size: var(--xxxsmall-font-size);
                 margin-bottom: 10px;
             }
             ul {
-                font-size: var(--small-font-size);
+                font-size: var(--xxxsmall-font-size);
                 margin-bottom: 10px;
                 li {
                     margin-top: 10px;
@@ -429,7 +445,7 @@
             .project__itemBtnWrapper {
                 margin-top: 10px;
                 a {
-                    font-size: var(--smaller-font-size);
+                    font-size: var(--xxxxsmall-font-size);
                 }
                 a:first-child {
                     margin-right: 5px;
