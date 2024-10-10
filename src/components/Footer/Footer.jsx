@@ -1,17 +1,13 @@
 import React from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faLinkedin, faYoutube, faGithub} from '@fortawesome/free-brands-svg-icons';
+import {faLinkedin, faGithub} from '@fortawesome/free-brands-svg-icons';
 import styles from './Footer.module.scss';
 
 function Footer() {
 	const bannerBtns = [
 		{
 			icon: faLinkedin,
-			link: 'https://github.com/hvhiep'
-		},
-		{
-			icon: faYoutube,
-			link: 'https://github.com/hvhiep'
+			link: 'https://www.linkedin.com/in/hvhiep'
 		},
 		{
 			icon: faGithub,
@@ -22,7 +18,7 @@ function Footer() {
 		<footer className={styles.wrapper}>
 			<div className={styles.inner}>
 				<div className={styles.title}>Hoang Van Hiep</div>
-				<div className={styles.subtitle}>Frontend Developer</div>
+				<div className={styles.subtitle}>Mobile Developer</div>
 				<div className={styles.bannerBtnWrapper}>
 					{bannerBtns.map((item, index) => (
 						<a

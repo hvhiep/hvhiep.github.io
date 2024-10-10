@@ -66,11 +66,10 @@ function Content() {
 			name: 'MetaFox',
 			desc: 'An online community-building tool for people to create their own social communities.',
 			images: [
-				'./assets/phone/metafox1.png',
-				'./assets/phone/metafox2.png',
-				'./assets/phone/metafox3.png',
-				'./assets/phone/metafox4.png',
-				'./assets/phone/metafox5.png'
+				'./assets/phone/metafox1.webp',
+				'./assets/phone/metafox2.webp',
+				'./assets/phone/metafox3.webp',
+				'./assets/phone/metafox4.webp'
 			],
 			imageProps: {
 				borderRadius: true
@@ -290,10 +289,10 @@ function Content() {
 						<div className={styles.bannerTextWrapper}>
 							<div>
 								<h1>Hi 👋, I'm Hiep</h1>
-								<h1>A Mobile Developer</h1>
+								<h1>A Mobile Developer 📱</h1>
 								<span>
 									<span className={styles.bold}>Two years</span> of experience in developing cross-platform mobile
-									applications using React Native
+									applications using React Native.
 								</span>
 								<div>
 									<Button
@@ -338,7 +337,9 @@ function Content() {
 								<path d='M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z' />
 								<image
 									className={styles.imageMaskImage}
-									x='12'
+									// x={8}
+									y={-14}
+									// z={10}
 									href='../../assets/avatar.png'
 								/>
 							</g>
