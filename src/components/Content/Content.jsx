@@ -64,7 +64,7 @@ function Content() {
 		{
 			timeline: '08/2022 - Present',
 			name: 'MetaFox',
-			desc: 'An online community-building tool for people to create their own social communities.',
+			desc: 'An online community-building tool that enables businesses, brands, creators, and interest groups to create their own social communities.',
 			images: [
 				'./assets/phone/metafox1.webp',
 				'./assets/phone/metafox2.webp',
@@ -74,13 +74,14 @@ function Content() {
 			imageProps: {
 				borderRadius: true
 			},
-			technologies: 'React Native, TypeScript, Redux Saga, Firebase.',
+			technologies: 'React Native, Redux, Redux Saga, Firebase, Android, iOS.',
 			featureTitle: 'Responsibilities',
 			features: [
-				'Maintained and developed new modules for the core application, such as Social Invitation, Dating, etc.',
-				'Added features with animations (reaction drop effects, drag- and-drop objects,...) using libraries like Reanimated, Skia, etc.',
-				'Wrote scripts to automate repetitive tasks during app builds (downloading source code of custom modules, checking and adding dependencies and special permissions)',
-				'Developed custom features based on client requirements, such as managing expenses and residents in buildings, creating courses, etc.'
+				'Maintain and enhance scalable core modules of the main social application.',
+				'Develop new modules and features, such as Social Invitation, Dating, Multi-step Forms, Custom Font Family, In-app Notifications, and more.',
+				'Enhance the app’s UI/UX with high performance by leveraging animation libraries such as Reanimated, Gesture Handler, and Skia.',
+				'Reduce repetitive tasks for the team by implementing automation scripts.',
+				'Build and deploy apps to store.'
 			],
 			buttons: [
 				{
@@ -291,8 +292,10 @@ function Content() {
 								<h1>Hi 👋, I'm Hiep</h1>
 								<h1>A Mobile Developer 📱</h1>
 								<span>
-									<span className={styles.bold}>Two years</span> of experience in developing cross-platform mobile
-									applications using React Native.
+									<span className={styles.bold}>2+ years</span> of experience in developing cross-platform mobile applications.
+								</span>
+								<span className={styles.text}>
+									Passionate about building feature-rich, user-friendly, and high-performance applications.
 								</span>
 								<div>
 									<Button
@@ -303,7 +306,7 @@ function Content() {
 									<Button
 										title='Download CV'
 										icon={faDownload}
-										link='./assets/HoangVanHiepCV.pdf'
+										link='./assets/HoangVanHiep-MobileDeveloper.pdf'
 										download
 									/>
 								</div>
@@ -363,7 +366,7 @@ function Content() {
 							<span>27/08/2018 - NOW</span>
 							<h3>UNIVERSITY OF INFORMATION TECHNOLOGY</h3>
 							<h4>Major: Information Technology</h4>
-							<span>GPA: 8.1/10</span>
+							<span>GPA: 3.24/4</span>
 							{/* awards */}
 							<div className={styles.education__awardWrapper}>
 								<div>
