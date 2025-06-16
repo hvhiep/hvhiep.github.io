@@ -306,7 +306,7 @@ function Content() {
 									<Button
 										title='Download CV'
 										icon={faDownload}
-										link='./assets/HoangVanHiep-MobileDeveloper.pdf'
+										link='./assets/HoangVanHiep_MobileDeveloper.pdf'
 										download
 									/>
 								</div>
